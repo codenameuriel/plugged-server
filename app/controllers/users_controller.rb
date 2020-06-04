@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def create
-    byebug
-    user = User.create(user_params)
+    # byebug
+    user = User.find_or_create_by(user_params)
     if user
       render json: user
     else
