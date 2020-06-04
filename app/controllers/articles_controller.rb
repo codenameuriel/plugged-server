@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def create
     # byebug
-    article = Article.create(article_params)
+    article = Article.find_or_create_by(article_params)
     if article 
       render json: article
     else
