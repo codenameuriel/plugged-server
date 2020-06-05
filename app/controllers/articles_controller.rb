@@ -1,4 +1,13 @@
 class ArticlesController < ApplicationController
+  def index
+    articles = Article.all
+    if articles
+      paginate json: articles
+    else
+      render json: { message: 'No articles found in database' }
+    end
+  end
+
   def create
     # byebug
     article = Article.find_or_create_by(article_params)
