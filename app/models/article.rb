@@ -1,4 +1,4 @@
 class Article < ApplicationRecord
-  has_many :collections
+  has_many :collections, dependent: :destroy
   has_many :users, through: :collections
 end

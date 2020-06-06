@@ -10,11 +10,22 @@ class ArticlesController < ApplicationController
 
   def create
     # byebug
-    article = Article.find_or_create_by(article_params)
+    article = Article.create(article_params)
     if article 
       render json: article
     else
       render json: { message: 'Could not create article' }
+    end
+  end
+
+  def destroy
+    # byebug
+    article = Article.find_by(id: params[:id])
+    if article
+      article.destroy
+      render json: article
+    else
+      render json: { message: 'Could not find article to destroy' }
     end
   end
 
