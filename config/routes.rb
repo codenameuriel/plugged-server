@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users
   resources :articles
   resources :collections
+  resources :categories
+  resources :user_categories
 
   get '/users/login/:username', to: 'users#login'
 end
