@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     user = User.find_or_create_by(user_params)
     if user
       params[:categories].each do |id|
-        user_category = UserCategory.create(user_id: user.id, category_id: id.to_i )
+        user_category = UserCategory.find_or_create_by(user_id: user.id, category_id: id.to_i)
       end
       render json: user,  include: [:categories]
     else

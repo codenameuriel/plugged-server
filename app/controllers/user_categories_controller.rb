@@ -1,6 +1,14 @@
 class UserCategoriesController < ApplicationController
   def create
-    user_category = UserCategory.create(user_category_params)
+    # byebug
+    user = User.find_by(id: params[:user_id])
+    category = Category.find_by(name: params[:category_name])
+    if user && category
+      UserCategory.find_or_create_by(user_id: user.id, category_id: category.id)
+      render json: user, include: [:categories]
+    else
+      render json: { message: 'Could not subscribe user to category'}
+    end
   end
 
   private 
