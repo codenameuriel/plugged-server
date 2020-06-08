@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :user_categories
 
   get '/users/login/:username', to: 'users#login'
+  get '/user_categories/unsubscribe', to: 'user_categories#destroy'
 end
