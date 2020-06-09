@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :collections
   resources :categories
   resources :user_categories
+  resources :sources
 
   get '/users/login/:username', to: 'users#login'
   get '/user_categories/unsubscribe', to: 'user_categories#destroy'
+  get '/get-sources/:category', to: 'sources#source'
 end
