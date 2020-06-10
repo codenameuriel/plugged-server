@@ -1,0 +1,2 @@
+class NewspaperCategory < ApplicationRecord
+end

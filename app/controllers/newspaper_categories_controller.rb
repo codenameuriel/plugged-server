@@ -1,0 +1,2 @@
+class NewspaperCategoriesController < ApplicationController
+end
