@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/users/login/:username', to: 'users#login'
   get '/user_categories/unsubscribe', to: 'user_categories#destroy'
   get '/get-sources/:category', to: 'sources#source'
+  post '/topics/build-newspaper', to: 'topics#build'
 end

@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :sources, through: :user_sources
   has_many :user_topics, dependent: :destroy
   has_many :topics, through: :user_topics
+  has_many :newspapers
 end
