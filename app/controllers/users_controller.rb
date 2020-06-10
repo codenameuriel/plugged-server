@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     # byebug
     user = User.find_by(username: params[:username])
     if user 
-      render json: user, include: [:categories]
+      render json: user, include: [:categories], methods: :get_newspapers
     else
       render json: { message: 'No user found by provided username'}
     end

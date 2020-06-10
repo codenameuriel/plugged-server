@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_015452) do
+ActiveRecord::Schema.define(version: 2020_06_10_165908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,34 @@ ActiveRecord::Schema.define(version: 2020_06_10_015452) do
   create_table "collections", force: :cascade do |t|
     t.integer "user_id"
     t.integer "article_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "newspaper_categories", force: :cascade do |t|
+    t.integer "newspaper_id"
+    t.integer "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "newspaper_sources", force: :cascade do |t|
+    t.integer "newspaper_id"
+    t.integer "source_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "newspaper_topics", force: :cascade do |t|
+    t.integer "newspaper_id"
+    t.integer "topic_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "newspapers", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
