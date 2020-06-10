@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :user_topics
   resources :newspapers
   resources :newspaper_sources
+  resources :newspaper_topics
 
   get '/users/login/:username', to: 'users#login'
   get '/user_categories/unsubscribe', to: 'user_categories#destroy'
