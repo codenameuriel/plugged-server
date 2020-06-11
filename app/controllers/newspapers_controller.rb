@@ -22,11 +22,11 @@ class NewspapersController < ApplicationController
     # render json: user, include: [:categories, :sources, :topics, :newspapers]
     render json: {
       title: newspaper.title, 
-      username: user.username,
-      categories: newspaper.categories,
       sources: newspaper.sources,
+      categories: newspaper.categories,
       topics: newspaper.topics,
       created_at: newspaper.created_at
+      # username: user.username,
     }
   end
 end
