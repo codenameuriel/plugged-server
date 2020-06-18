@@ -6,7 +6,7 @@ class UserCategoriesController < ApplicationController
 
     if user && category
       UserCategory.find_or_create_by(user_id: user.id, category_id: category.id)
-      render json: user, include: [:categories]
+      render json: user, include: [:categories], methods: :get_newspapers
     else
       render json: { message: 'Could not subscribe user to category'}
     end
@@ -26,7 +26,7 @@ class UserCategoriesController < ApplicationController
     else
       render json: { message: 'Could not unsubscribe from categories'}
     end
-    render json: user, include: [:categories]
+    render json: user, include: [:categories], methods: :get_newspapers
   end
 
   private 
