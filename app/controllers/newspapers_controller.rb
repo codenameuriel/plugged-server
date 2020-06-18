@@ -29,4 +29,12 @@ class NewspapersController < ApplicationController
       # username: user.username,
     }
   end
+
+  def destroy
+    # byebug
+    # user = User.find_by(id: params["user"])
+    newspaper = Newspaper.find_by(title: params["title"], user_id: params["user"])
+    newspaper.destroy
+    render json: newspaper
+  end
 end

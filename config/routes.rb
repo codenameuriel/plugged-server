@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get '/user_categories/unsubscribe', to: 'user_categories#destroy'
   get '/get-sources/:category', to: 'sources#source'
   post '/newspaper/build-newspaper', to: 'newspapers#build'
+  delete '/newspaper/:title', to: 'newspapers#destroy'
 end
